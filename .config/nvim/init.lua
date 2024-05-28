@@ -6,7 +6,7 @@
  
 
 
--- load default vim settings
+-- load default vim settings (naive)
 require('settings')
 -- use lazyvim as package manager for this
 require('plugins')
