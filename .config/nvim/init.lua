@@ -37,4 +37,4 @@ vim.g.python3_host_prog = '/Users/adamzhang/.pyenv/shims/python'  -- Adjust this
 
 -- load default vim settings (naive)
 require('settings')
-
+require('keymaps')

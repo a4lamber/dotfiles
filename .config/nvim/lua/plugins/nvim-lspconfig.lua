@@ -38,18 +38,22 @@ return {
         'quick_lint_js',
         'yamlls',
         'pyright',
+        -- java cuz i'm a chad
+        'jdtls',
       }
     })
 
     require('mason-tool-installer').setup({
       -- Install these linters, formatters, debuggers automatically
       ensure_installed = {
+        -- python
         'black',
         'debugpy',
         'flake8',
         'isort',
         'mypy',
         'pylint',
+        -- java
       },
     })
 
@@ -66,10 +70,13 @@ return {
     -- Call setup on each LSP server
     require('mason-lspconfig').setup_handlers({
       function(server_name)
-        lspconfig[server_name].setup({
-          on_attach = lsp_attach,
-          capabilities = lsp_capabilities,
-        })
+        -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
+        if server_name ~= 'jdtls' then
+          lspconfig[server_name].setup({
+            on_attach = lsp_attach,
+            capabilities = lsp_capabilities,
+          })
+        end
       end
     })
 
