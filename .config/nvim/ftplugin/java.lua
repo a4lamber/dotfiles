@@ -45,8 +45,7 @@ local config = {
     java = {
       -- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
       -- home = '/usr/lib/jvm/java-17-openjdk-amd64',
-      home = '/Library/Java/JavaVirtualMachines/openjdk.jdk',
-      -- sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+        home = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home',
       eclipse = {
         downloadSources = true,
       },
@@ -56,16 +55,9 @@ local config = {
         -- The runtime name parameters need to match specific Java execution environments.  See https://github.com/tamago324/nlsp-settings.nvim/blob/2a52e793d4f293c0e1d61ee5794e3ff62bfbbb5d/schemas/_generated/jdtls.json#L317-L334
         runtimes = {
           {
-            name = "JavaSE-11",
-            path = "/usr/lib/jvm/java-11-openjdk-amd64",
-          },
-          {
             name = "JavaSE-17",
-            path = "/usr/lib/jvm/java-17-openjdk-amd64",
-          },
-          {
-            name = "JavaSE-19",
-            path = "/usr/lib/jvm/java-19-openjdk-amd64",
+            -- path = "/usr/lib/jvm/java-11-openjdk-amd64",
+            path = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home',
           }
         }
       },

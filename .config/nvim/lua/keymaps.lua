@@ -13,6 +13,10 @@ keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols,
 keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
 keymap.set('n', '<leader>fm', function() require('telescope.builtin').treesitter({default_text=":method:"}) end)
 
+-- Nvim-tree
+keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
+keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
 
 -- LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
